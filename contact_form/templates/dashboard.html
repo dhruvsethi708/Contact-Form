@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Dashboard</h2>
+    </div>
+
+    <form id="admin-email-form">
+        <div class="form-group">
+          <label for="admin-email">Enter admin email:</label>
+          <input type="email" class="form-control" id="admin-email" name="admin-email" required>
+        </div>
+        <button type="submit" class="btn btn-primary submit-button" style="margin:4px">Submit</button>
+      </form>
+
+        <table  id="contact-data" class="table" style="display:none;">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Message</th>
+              <th>Date and Time</th>
+              <th>Quick Reply</th>
+            </tr>
+            {% for contact in contacts %}
+              <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.message }}</td>
+                <td>{{ contact.timestamp }}</td>
+                <td><a href="mailto:{{ contact.email }}?subject=Reply to your message">Quick Reply</a></td>
+              </tr>
+            {% endfor %}
+          </table>
+
+    <script>
+    
+    document.getElementById('admin-email-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const enteredEmail = document.getElementById('admin-email').value;
+
+      if (enteredEmail === 'dhruvsethi708@gmail.com') {
+        document.getElementById('contact-data').style.display = 'table';
+      } else {
+        window.location.href = '/';
+      }
+    });
+  </script>
+  
+{% endblock %}
