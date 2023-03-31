@@ -10,3 +10,11 @@
 
 4) And add Quick Reply Button in Dashboard Panel Where Admin Can Reply To Users corresponding Email or Phone
 
+
+# Video
+
+
+https://user-images.githubusercontent.com/74965209/229102930-59f88dce-dfc8-4379-b5a8-7aecb97feebc.mp4
+
+
+
